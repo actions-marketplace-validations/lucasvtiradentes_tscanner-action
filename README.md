@@ -1,26 +1,29 @@
 <a name="TOC"></a>
 
 <div align="center">
-<img width="128" src="https://raw.githubusercontent.com/lucasvtiradentes/tscanner/main/.github/image/logo.png" alt="tscanner GitHub Action logo">
-<h4>tscanner - GitHub Action</h4>
-<p>
-  <a href="https://github.com/marketplace/actions/tscanner-pr-validator"><img src="https://img.shields.io/badge/GitHub-Marketplace-blue.svg" alt="GitHub Marketplace"></a>
-  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
-  <br>
+  <img height="80" src="https://i.ibb.co/1tyQ1m40/tscanner-logo.png" alt="tscanner logo">
+  <div><strong>TScanner - GitHub Action</strong></div>
   <a href="#-overview">Overview</a> • <a href="#-features">Features</a> • <a href="#-usage">Usage</a> • <a href="#-inputs">Inputs</a> • <a href="#-license">License</a>
-</p>
-
 </div>
 
-<a href="#"><img src="https://raw.githubusercontent.com/lucasvtiradentes/tscanner/main/.github/image/divider.png" /></a>
+<a href="#"><img src="https://i.ibb.co/CKW9djzW/divider.png" /></a>
 
-## 🎺 Overview<a href="#TOC"><img align="right" src="https://raw.githubusercontent.com/lucasvtiradentes/tscanner/main/.github/image/up_arrow.png" width="22"></a>
+## 🎺 Overview<a href="#TOC"><img align="right" src="https://i.ibb.co/YBVkRcnC/up-arrow.png" width="22"></a>
 
-GitHub Action for [Tscanner](https://github.com/lucasvtiradentes/tscanner): Enforce project-specific patterns, detect anti-patterns, and validate architectural conventions with 23+ built-in rules or custom validation (regex, scripts, AI). Integrates into CI/CD workflows with smart PR comments and flexible scan modes.
+GitHub Action for [TScanner](https://github.com/lucasvtiradentes/tscanner): Enforce project-specific patterns, detect anti-patterns, and validate architectural conventions with 23+ built-in rules or custom validation (regex, scripts, AI). Integrates into CI/CD workflows with smart PR comments and flexible scan modes.
 
-<img src="https://raw.githubusercontent.com/lucasvtiradentes/tscanner/main/.github/image/pr-comment-errors-found.png" alt="PR Comment Screenshot" width="100%">
+<table>
+  <tr>
+    <th>PR Comment - Issues Found</th>
+    <th>PR Comment - No Issues Found</th>
+  </tr>
+  <tr>
+    <td><img src="https://i.ibb.co/m5DS0kY6/pr-comment-issues-found.png" alt="PR Comment - Issues Found"></td>
+    <td><img src="https://i.ibb.co/0V6d51HR/tscanner-pr-comment-no-issues.png" alt="PR Comment - No Issues"></td>
+  </tr>
+</table>
 
-## ⭐ Features<a href="#TOC"><img align="right" src="https://raw.githubusercontent.com/lucasvtiradentes/tscanner/main/.github/image/up_arrow.png" width="22"></a>
+## ⭐ Features<a href="#TOC"><img align="right" src="https://i.ibb.co/YBVkRcnC/up-arrow.png" width="22"></a>
 
 - **23+ Built-in Rules** - AST-based validation for TypeScript/TSX
 - **Custom Rules** - Regex patterns, JavaScript scripts, or AI-powered validation
@@ -30,7 +33,7 @@ GitHub Action for [Tscanner](https://github.com/lucasvtiradentes/tscanner): Enfo
 - **Flexible Control** - Continue or fail workflow on errors
 - **CI/CD Integration** - Works with any GitHub Actions workflow
 
-## 🚀 Usage<a href="#TOC"><img align="right" src="https://raw.githubusercontent.com/lucasvtiradentes/tscanner/main/.github/image/up_arrow.png" width="22"></a>
+## 🚀 Usage<a href="#TOC"><img align="right" src="https://i.ibb.co/YBVkRcnC/up-arrow.png" width="22"></a>
 
 ### Quick Start
 
@@ -48,7 +51,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: lucasvtiradentes/tscanner-action@v0.0.6
+      - uses: lucasvtiradentes/tscanner-action@v0.0.8
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 ```
@@ -56,13 +59,13 @@ jobs:
 **Scan only changed files (recommended for PRs):**
 
 ```yaml
-- uses: lucasvtiradentes/tscanner-action@v0.0.6
+- uses: lucasvtiradentes/tscanner-action@v0.0.8
   with:
     github-token: ${{ secrets.GITHUB_TOKEN }}
     target-branch: 'origin/main'
 ```
 
-### Advanced Examples
+### Additional examples
 
 <details>
 <summary><b>Continue on Errors</b></summary>
@@ -70,7 +73,7 @@ jobs:
 Scan but don't fail the workflow:
 
 ```yaml
-- uses: lucasvtiradentes/tscanner-action@v0.0.6
+- uses: lucasvtiradentes/tscanner-action@v0.0.8
   with:
     github-token: ${{ secrets.GITHUB_TOKEN }}
     continue-on-error: 'true'
@@ -84,7 +87,7 @@ Scan but don't fail the workflow:
 Primary grouping by rule instead of file:
 
 ```yaml
-- uses: lucasvtiradentes/tscanner-action@v0.0.6
+- uses: lucasvtiradentes/tscanner-action@v0.0.8
   with:
     github-token: ${{ secrets.GITHUB_TOKEN }}
     group-by: 'rule'
@@ -98,7 +101,7 @@ Primary grouping by rule instead of file:
 Use non-standard config location:
 
 ```yaml
-- uses: lucasvtiradentes/tscanner-action@v0.0.6
+- uses: lucasvtiradentes/tscanner-action@v0.0.8
   with:
     github-token: ${{ secrets.GITHUB_TOKEN }}
     config-path: 'config/tscanner'
@@ -112,7 +115,7 @@ Use non-standard config location:
 Pin to exact CLI version:
 
 ```yaml
-- uses: lucasvtiradentes/tscanner-action@v0.0.6
+- uses: lucasvtiradentes/tscanner-action@v0.0.8
   with:
     github-token: ${{ secrets.GITHUB_TOKEN }}
     tscanner-version: '0.1.5'
@@ -126,7 +129,7 @@ Pin to exact CLI version:
 All options:
 
 ```yaml
-- uses: lucasvtiradentes/tscanner-action@v0.0.6
+- uses: lucasvtiradentes/tscanner-action@v0.0.8
   with:
     github-token: ${{ secrets.GITHUB_TOKEN }}
     target-branch: 'origin/develop'
@@ -139,7 +142,7 @@ All options:
 
 </details>
 
-## 📋 Inputs<a href="#TOC"><img align="right" src="https://raw.githubusercontent.com/lucasvtiradentes/tscanner/main/.github/image/up_arrow.png" width="22"></a>
+## 📋 Inputs<a href="#TOC"><img align="right" src="https://i.ibb.co/YBVkRcnC/up-arrow.png" width="22"></a>
 
 | Input | Required | Default | Description |
 |-------|----------|---------|-------------|
@@ -153,14 +156,25 @@ All options:
 
 ## 📝 Notes
 
-- **Current version:** `v0.0.6`
-- **Generated at:** `2025-11-24T04:00:08Z`
+This repository is automatically generated. If you want to contribute or see the source code, you can find it in the [TScanner monorepo](https://github.com/lucasvtiradentes/tscanner/tree/main/packages/github-action).
 
-This repository is automatically generated. If you want to contribute or see the source code, you can find it in the [tscanner monorepo](https://github.com/lucasvtiradentes/tscanner/tree/main/packages/github-action).
+- **Current version:** `v0.0.8`
+- **Generated at:** `2025-11-25T05:00:12Z`
 
 ---
 
 
-## 📜 License<a href="#TOC"><img align="right" src="https://raw.githubusercontent.com/lucasvtiradentes/tscanner/main/.github/image/up_arrow.png" width="22"></a>
+## 📜 License<a href="#TOC"><img align="right" src="https://i.ibb.co/YBVkRcnC/up-arrow.png" width="22"></a>
 
 MIT License - see [LICENSE](LICENSE) file for details.
+
+<a href="#"><img src="https://i.ibb.co/CKW9djzW/divider.png" /></a>
+
+<div align="center">
+  <div>
+    <a target="_blank" href="https://www.linkedin.com/in/lucasvtiradentes/"><img src="https://img.shields.io/badge/-linkedin-blue?logo=Linkedin&logoColor=white" alt="LinkedIn"></a>
+    <a target="_blank" href="mailto:lucasvtiradentes@gmail.com"><img src="https://img.shields.io/badge/gmail-red?logo=gmail&logoColor=white" alt="Gmail"></a>
+    <a target="_blank" href="https://x.com/lucasvtiradente"><img src="https://img.shields.io/badge/-X-black?logo=X&logoColor=white" alt="X"></a>
+    <a target="_blank" href="https://github.com/lucasvtiradentes"><img src="https://img.shields.io/badge/-github-gray?logo=Github&logoColor=white" alt="Github"></a>
+  </div>
+</div>
