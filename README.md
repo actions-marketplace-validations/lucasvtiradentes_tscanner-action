@@ -11,7 +11,7 @@
 
 ## 🎺 Overview<a href="#TOC"><img align="right" src="https://cdn.jsdelivr.net/gh/lucasvtiradentes/tscanner@main/.github/image/up_arrow.png" width="22"></a>
 
-GitHub Action for [TScanner](https://github.com/lucasvtiradentes/tscanner): Enforce project-specific patterns, detect anti-patterns, and validate architectural conventions with 23+ built-in rules or custom validation (regex, scripts, AI). Integrates into CI/CD workflows with smart PR comments and flexible scan modes.
+GitHub Action for [TScanner](https://github.com/lucasvtiradentes/tscanner): Enforce project-specific patterns, detect anti-patterns, and validate architectural conventions with 39 built-in rules or custom validation (regex, scripts, AI). Integrates into CI/CD workflows with smart PR comments and flexible scan modes.
 
 <table>
   <tr>
@@ -29,7 +29,7 @@ GitHub Action for [TScanner](https://github.com/lucasvtiradentes/tscanner): Enfo
 - **Smart PR Comments** - Auto-posted summary with clickable file links to exact lines
 - **Git-Aware Scanning** - Full codebase or only files changed in PR
 - **Dual Grouping** - View issues by file or by rule in the same comment
-- **23+ Built-in Rules** - Type safety, imports, and code quality checks
+- **39 Built-in Rules** - Type safety, imports, and code quality checks
 - **Custom Rules** - Regex patterns, scripts, or AI-powered validation
 - **Flexible Control** - Block PR or continue with warnings
 
@@ -51,7 +51,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: lucasvtiradentes/tscanner-action@v0.0.16
+      - uses: lucasvtiradentes/tscanner-action@v0.0.17
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 ```
@@ -59,7 +59,7 @@ jobs:
 **Scan only changed files (recommended for PRs):**
 
 ```yaml
-- uses: lucasvtiradentes/tscanner-action@v0.0.16
+- uses: lucasvtiradentes/tscanner-action@v0.0.17
   with:
     github-token: ${{ secrets.GITHUB_TOKEN }}
     target-branch: 'origin/main'
@@ -73,7 +73,7 @@ jobs:
 Scan but don't fail the workflow:
 
 ```yaml
-- uses: lucasvtiradentes/tscanner-action@v0.0.16
+- uses: lucasvtiradentes/tscanner-action@v0.0.17
   with:
     github-token: ${{ secrets.GITHUB_TOKEN }}
     continue-on-error: 'true'
@@ -87,7 +87,7 @@ Scan but don't fail the workflow:
 Primary grouping by rule instead of file:
 
 ```yaml
-- uses: lucasvtiradentes/tscanner-action@v0.0.16
+- uses: lucasvtiradentes/tscanner-action@v0.0.17
   with:
     github-token: ${{ secrets.GITHUB_TOKEN }}
     group-by: 'rule'
@@ -101,7 +101,7 @@ Primary grouping by rule instead of file:
 Use non-standard config location:
 
 ```yaml
-- uses: lucasvtiradentes/tscanner-action@v0.0.16
+- uses: lucasvtiradentes/tscanner-action@v0.0.17
   with:
     github-token: ${{ secrets.GITHUB_TOKEN }}
     config-path: 'config/tscanner'
@@ -115,7 +115,7 @@ Use non-standard config location:
 Pin to exact CLI version:
 
 ```yaml
-- uses: lucasvtiradentes/tscanner-action@v0.0.16
+- uses: lucasvtiradentes/tscanner-action@v0.0.17
   with:
     github-token: ${{ secrets.GITHUB_TOKEN }}
     tscanner-version: '0.1.5'
@@ -129,7 +129,7 @@ Pin to exact CLI version:
 All options:
 
 ```yaml
-- uses: lucasvtiradentes/tscanner-action@v0.0.16
+- uses: lucasvtiradentes/tscanner-action@v0.0.17
   with:
     github-token: ${{ secrets.GITHUB_TOKEN }}
     target-branch: 'origin/develop'
@@ -167,8 +167,8 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 This repository is automatically generated. If you want to contribute or see the source code, you can find it in the [TScanner monorepo](https://github.com/lucasvtiradentes/tscanner/tree/main/packages/github-action).
 
-- **Current version:** `v0.0.16`
-- **Generated at:** `2025-11-26T04:12:41Z`
+- **Current version:** `v0.0.17`
+- **Generated at:** `2025-11-26T12:34:05Z`
 
 <a href="#"><img src="https://cdn.jsdelivr.net/gh/lucasvtiradentes/tscanner@main/.github/image/divider.png" /></a>
 
