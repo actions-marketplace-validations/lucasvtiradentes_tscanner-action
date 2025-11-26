@@ -1,5 +1,5 @@
 name: 'tscanner-action'
-description: 'Enforce code standards with 23+ rules or custom validation. Smart PR comments and flexible scan modes for CI/CD workflows.'
+description: 'Code quality scanner for the AI-generated code era'
 author: 'lucasvtiradentes'
 
 branding:
@@ -22,11 +22,11 @@ inputs:
     required: false
     default: '.tscanner'
   tscanner-version:
-    description: 'tscanner version to use (e.g., "1.0.0", "latest")'
+    description: 'TScanner version to use (e.g., "1.0.0", "latest")'
     required: false
     default: 'latest'
   dev-mode:
-    description: 'Use local tscanner CLI from monorepo (internal development only)'
+    description: 'Use local TScanner CLI from monorepo (internal development only)'
     required: false
     default: 'false'
   group-by:
