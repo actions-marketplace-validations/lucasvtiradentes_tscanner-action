@@ -50,7 +50,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: lucasvtiradentes/tscanner-action@v0.0.14
+      - uses: lucasvtiradentes/tscanner-action@v0.0.15
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 ```
@@ -58,7 +58,7 @@ jobs:
 **Scan only changed files (recommended for PRs):**
 
 ```yaml
-- uses: lucasvtiradentes/tscanner-action@v0.0.14
+- uses: lucasvtiradentes/tscanner-action@v0.0.15
   with:
     github-token: ${{ secrets.GITHUB_TOKEN }}
     target-branch: 'origin/main'
@@ -72,7 +72,7 @@ jobs:
 Scan but don't fail the workflow:
 
 ```yaml
-- uses: lucasvtiradentes/tscanner-action@v0.0.14
+- uses: lucasvtiradentes/tscanner-action@v0.0.15
   with:
     github-token: ${{ secrets.GITHUB_TOKEN }}
     continue-on-error: 'true'
@@ -86,7 +86,7 @@ Scan but don't fail the workflow:
 Primary grouping by rule instead of file:
 
 ```yaml
-- uses: lucasvtiradentes/tscanner-action@v0.0.14
+- uses: lucasvtiradentes/tscanner-action@v0.0.15
   with:
     github-token: ${{ secrets.GITHUB_TOKEN }}
     group-by: 'rule'
@@ -100,7 +100,7 @@ Primary grouping by rule instead of file:
 Use non-standard config location:
 
 ```yaml
-- uses: lucasvtiradentes/tscanner-action@v0.0.14
+- uses: lucasvtiradentes/tscanner-action@v0.0.15
   with:
     github-token: ${{ secrets.GITHUB_TOKEN }}
     config-path: 'config/tscanner'
@@ -114,7 +114,7 @@ Use non-standard config location:
 Pin to exact CLI version:
 
 ```yaml
-- uses: lucasvtiradentes/tscanner-action@v0.0.14
+- uses: lucasvtiradentes/tscanner-action@v0.0.15
   with:
     github-token: ${{ secrets.GITHUB_TOKEN }}
     tscanner-version: '0.1.5'
@@ -128,7 +128,7 @@ Pin to exact CLI version:
 All options:
 
 ```yaml
-- uses: lucasvtiradentes/tscanner-action@v0.0.14
+- uses: lucasvtiradentes/tscanner-action@v0.0.15
   with:
     github-token: ${{ secrets.GITHUB_TOKEN }}
     target-branch: 'origin/develop'
@@ -166,8 +166,8 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 This repository is automatically generated. If you want to contribute or see the source code, you can find it in the [TScanner monorepo](https://github.com/lucasvtiradentes/tscanner/tree/main/packages/github-action).
 
-- **Current version:** `v0.0.14`
-- **Generated at:** `2025-11-26T02:08:40Z`
+- **Current version:** `v0.0.15`
+- **Generated at:** `2025-11-26T02:55:57Z`
 
 <a href="#"><img src="https://cdn.jsdelivr.net/gh/lucasvtiradentes/tscanner@main/.github/image/divider.png" /></a>
 
