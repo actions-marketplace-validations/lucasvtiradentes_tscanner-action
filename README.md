@@ -1,14 +1,14 @@
 <a name="TOC"></a>
 
 <div align="center">
-  <img height="80" src="https://i.ibb.co/1tyQ1m40/tscanner-logo.png" alt="tscanner logo">
+  <img height="80" src="https://cdn.jsdelivr.net/gh/lucasvtiradentes/tscanner@main/.github/image/tscanner-logo.png" alt="tscanner logo">
   <div><strong>TScanner - GitHub Action</strong></div>
   <a href="#-overview">Overview</a> • <a href="#-features">Features</a> • <a href="#-usage">Usage</a> • <a href="#-inputs">Inputs</a> • <a href="#-inspirations">Inspirations</a> • <a href="#-license">License</a>
 </div>
 
-<a href="#"><img src="https://i.ibb.co/CKW9djzW/divider.png" /></a>
+<a href="#"><img src="https://cdn.jsdelivr.net/gh/lucasvtiradentes/tscanner@main/.github/image/divider.png" /></a>
 
-## 🎺 Overview<a href="#TOC"><img align="right" src="https://i.ibb.co/YBVkRcnC/up-arrow.png" width="22"></a>
+## 🎺 Overview<a href="#TOC"><img align="right" src="https://cdn.jsdelivr.net/gh/lucasvtiradentes/tscanner@main/.github/image/up_arrow.png" width="22"></a>
 
 GitHub Action for [TScanner](https://github.com/lucasvtiradentes/tscanner): Enforce project-specific patterns, detect anti-patterns, and validate architectural conventions with 23+ built-in rules or custom validation (regex, scripts, AI). Integrates into CI/CD workflows with smart PR comments and flexible scan modes.
 
@@ -18,12 +18,12 @@ GitHub Action for [TScanner](https://github.com/lucasvtiradentes/tscanner): Enfo
     <th>PR Comment - No Issues Found</th>
   </tr>
   <tr>
-    <td><img src="https://i.ibb.co/5W7GNQPv/tscanner-pr-comment-issues-found.png" alt="PR Comment - Issues Found"></td>
-    <td><img src="https://i.ibb.co/0V6d51HR/tscanner-pr-comment-no-issues.png" alt="PR Comment - No Issues"></td>
+    <td><img src="https://cdn.jsdelivr.net/gh/lucasvtiradentes/tscanner@main/.github/image/tscanner-pr-comment-issues-found.png" alt="PR Comment - Issues Found"></td>
+    <td><img src="https://cdn.jsdelivr.net/gh/lucasvtiradentes/tscanner@main/.github/image/tscanner-pr-comment-no-issues.png" alt="PR Comment - No Issues"></td>
   </tr>
 </table>
 
-## ⭐ Features<a href="#TOC"><img align="right" src="https://i.ibb.co/YBVkRcnC/up-arrow.png" width="22"></a>
+## ⭐ Features<a href="#TOC"><img align="right" src="https://cdn.jsdelivr.net/gh/lucasvtiradentes/tscanner@main/.github/image/up_arrow.png" width="22"></a>
 
 - **Smart PR Comments** - Auto-posted summary with clickable file links to exact lines
 - **Git-Aware Scanning** - Full codebase or only files changed in PR
@@ -32,7 +32,7 @@ GitHub Action for [TScanner](https://github.com/lucasvtiradentes/tscanner): Enfo
 - **Custom Rules** - Regex patterns, scripts, or AI-powered validation
 - **Flexible Control** - Block PR or continue with warnings
 
-## 📖 Usage<a href="#TOC"><img align="right" src="https://i.ibb.co/YBVkRcnC/up-arrow.png" width="22"></a>
+## 📖 Usage<a href="#TOC"><img align="right" src="https://cdn.jsdelivr.net/gh/lucasvtiradentes/tscanner@main/.github/image/up_arrow.png" width="22"></a>
 
 ### Quick Start
 
@@ -50,7 +50,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: lucasvtiradentes/tscanner-action@v0.0.13
+      - uses: lucasvtiradentes/tscanner-action@v0.0.14
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 ```
@@ -58,7 +58,7 @@ jobs:
 **Scan only changed files (recommended for PRs):**
 
 ```yaml
-- uses: lucasvtiradentes/tscanner-action@v0.0.13
+- uses: lucasvtiradentes/tscanner-action@v0.0.14
   with:
     github-token: ${{ secrets.GITHUB_TOKEN }}
     target-branch: 'origin/main'
@@ -72,7 +72,7 @@ jobs:
 Scan but don't fail the workflow:
 
 ```yaml
-- uses: lucasvtiradentes/tscanner-action@v0.0.13
+- uses: lucasvtiradentes/tscanner-action@v0.0.14
   with:
     github-token: ${{ secrets.GITHUB_TOKEN }}
     continue-on-error: 'true'
@@ -86,7 +86,7 @@ Scan but don't fail the workflow:
 Primary grouping by rule instead of file:
 
 ```yaml
-- uses: lucasvtiradentes/tscanner-action@v0.0.13
+- uses: lucasvtiradentes/tscanner-action@v0.0.14
   with:
     github-token: ${{ secrets.GITHUB_TOKEN }}
     group-by: 'rule'
@@ -100,7 +100,7 @@ Primary grouping by rule instead of file:
 Use non-standard config location:
 
 ```yaml
-- uses: lucasvtiradentes/tscanner-action@v0.0.13
+- uses: lucasvtiradentes/tscanner-action@v0.0.14
   with:
     github-token: ${{ secrets.GITHUB_TOKEN }}
     config-path: 'config/tscanner'
@@ -114,7 +114,7 @@ Use non-standard config location:
 Pin to exact CLI version:
 
 ```yaml
-- uses: lucasvtiradentes/tscanner-action@v0.0.13
+- uses: lucasvtiradentes/tscanner-action@v0.0.14
   with:
     github-token: ${{ secrets.GITHUB_TOKEN }}
     tscanner-version: '0.1.5'
@@ -128,7 +128,7 @@ Pin to exact CLI version:
 All options:
 
 ```yaml
-- uses: lucasvtiradentes/tscanner-action@v0.0.13
+- uses: lucasvtiradentes/tscanner-action@v0.0.14
   with:
     github-token: ${{ secrets.GITHUB_TOKEN }}
     target-branch: 'origin/develop'
@@ -141,38 +141,35 @@ All options:
 
 </details>
 
-## 📋 Inputs<a href="#TOC"><img align="right" src="https://i.ibb.co/YBVkRcnC/up-arrow.png" width="22"></a>
+## 📋 Inputs<a href="#TOC"><img align="right" src="https://cdn.jsdelivr.net/gh/lucasvtiradentes/tscanner@main/.github/image/up_arrow.png" width="22"></a>
 
 | Input | Required | Default | Description |
 |-------|----------|---------|-------------|
-| `github-token` | ✅ Yes | - | GitHub token for posting PR comments (`${{ secrets.GITHUB_TOKEN }}`) |
-| `target-branch` | No | - | Target branch to compare (enables branch mode). Example: `origin/main` |
-| `config-path` | No | `.tscanner` | Path to tscanner config directory containing `config.jsonc` |
-| `tscanner-version` | No | `latest` | NPM version of tscanner CLI to install |
-| `group-by` | No | `file` | Primary grouping mode: `file` or `rule` |
-| `continue-on-error` | No | `false` | Continue workflow even if errors found (`true`/`false`) |
-| `timezone` | No | `UTC` | Timezone for timestamps in PR comments. Example: `America/New_York` |
+| `github-token` | Yes | - | GitHub token for posting PR comments (`${{ secrets.GITHUB_TOKEN }}`) |
+| `target-branch` | - | - | Target branch to compare (enables branch mode). Example: `origin/main` |
+| `config-path` | - | `.tscanner` | Path to tscanner config directory containing `config.jsonc` |
+| `tscanner-version` | - | `latest` | NPM version of tscanner CLI to install |
+| `group-by` | - | `file` | Primary grouping mode: `file` or `rule` |
+| `continue-on-error` | - | `false` | Continue workflow even if errors found (`true`/`false`) |
+| `timezone` | - | `UTC` | Timezone for timestamps in PR comments. Example: `America/New_York` |
 
-## 💡 Inspirations<a href="#TOC"><img align="right" src="https://i.ibb.co/YBVkRcnC/up-arrow.png" width="22"></a>
+## 💡 Inspirations<a href="#TOC"><img align="right" src="https://cdn.jsdelivr.net/gh/lucasvtiradentes/tscanner@main/.github/image/up_arrow.png" width="22"></a>
 
 - [Biome](https://github.com/biomejs/biome) - Biome is a performant toolchain for web projects, it aims to provide developer tools to maintain the health of said projects.
 - [VSCode Bookmarks](https://github.com/alefragnani/vscode-bookmarks) - Bookmarks Extension for Visual Studio Code
 
-## 📝 Notes
-
-This repository is automatically generated. If you want to contribute or see the source code, you can find it in the [TScanner monorepo](https://github.com/lucasvtiradentes/tscanner/tree/main/packages/github-action).
-
-- **Current version:** `v0.0.13`
-- **Generated at:** `2025-11-26T01:36:55Z`
-
----
-
-
-## 📜 License<a href="#TOC"><img align="right" src="https://i.ibb.co/YBVkRcnC/up-arrow.png" width="22"></a>
+## 📜 License<a href="#TOC"><img align="right" src="https://cdn.jsdelivr.net/gh/lucasvtiradentes/tscanner@main/.github/image/up_arrow.png" width="22"></a>
 
 MIT License - see [LICENSE](LICENSE) file for details.
 
-<a href="#"><img src="https://i.ibb.co/CKW9djzW/divider.png" /></a>
+<a href="#"><img src="https://cdn.jsdelivr.net/gh/lucasvtiradentes/tscanner@main/.github/image/divider.png" /></a>
+
+This repository is automatically generated. If you want to contribute or see the source code, you can find it in the [TScanner monorepo](https://github.com/lucasvtiradentes/tscanner/tree/main/packages/github-action).
+
+- **Current version:** `v0.0.14`
+- **Generated at:** `2025-11-26T02:08:40Z`
+
+<a href="#"><img src="https://cdn.jsdelivr.net/gh/lucasvtiradentes/tscanner@main/.github/image/divider.png" /></a>
 
 <div align="center">
   <div>
