@@ -3,40 +3,109 @@
 <div align="center">
   <img height="80" src="https://cdn.jsdelivr.net/gh/lucasvtiradentes/tscanner@main/.github/image/tscanner-logo.png" alt="tscanner logo">
   <div><strong>TScanner - GitHub Action</strong></div>
-  <a href="#-overview">Overview</a> • <a href="#-features">Features</a> • <a href="#-usage">Usage</a> • <a href="#-inputs">Inputs</a> • <a href="#-inspirations">Inspirations</a> • <a href="#-license">License</a>
+  <br />
+  <a href="#-overview">Overview</a> • <a href="#-features">Features</a> • <a href="#-motivation">Motivation</a> • <a href="#-quick-start">Quick Start</a> • <a href="#-usage">Usage</a><br />
+  <a href="#-configuration">Configuration</a> • <a href="#-rules">Rules</a> • <a href="#-inspirations">Inspirations</a> • <a href="#-contributing">Contributing</a> • <a href="#-license">License</a>
 </div>
 
-<a href="#"><img src="https://cdn.jsdelivr.net/gh/lucasvtiradentes/tscanner@main/.github/image/divider.png" /></a>
+<div width="100%" align="center">
+  <img src="https://cdn.jsdelivr.net/gh/lucasvtiradentes/tscanner@main/.github/image/divider.png" />
+</div>
 
 ## 🎺 Overview<a href="#TOC"><img align="right" src="https://cdn.jsdelivr.net/gh/lucasvtiradentes/tscanner@main/.github/image/up_arrow.png" width="22"></a>
 
-GitHub Action for [TScanner](https://github.com/lucasvtiradentes/tscanner): Enforce project-specific patterns, detect anti-patterns, and validate architectural conventions with 23+ built-in rules or custom validation (regex, scripts, AI). Integrates into CI/CD workflows with smart PR comments and flexible scan modes.
+Block bad code before it reaches main. TScanner posts a comment on every PR showing exactly which rules were violated, with clickable links to the problematic lines. Reviewers focus on logic, not style debates.
+
+<!-- <DYNFIELD:GITHUB_ACTION_DEMO_IMAGE> -->
+<div align="center">
+  <img width="80%" src="https://cdn.jsdelivr.net/gh/lucasvtiradentes/tscanner@main/.github/image/tscanner-pr-comment-issues-found.png" alt="GitHub Action PR Comment">
+  <br>
+  <em>issues detected in the latest commit pushed to a PR</em>
+</div>
+<!-- </DYNFIELD:GITHUB_ACTION_DEMO_IMAGE> -->
+
+<br />
+
+<div align="center">
+
+<details>
+  <summary>Other images</summary>
+
+<br />
+
+<div align="center">
+  <img width="80%" src="https://cdn.jsdelivr.net/gh/lucasvtiradentes/tscanner@main/.github/image/tscanner-pr-comment-no-issues.png" alt="PR Comment - No Issues">
+  <br>
+  <em>no issues detected in the PR</em>
+</div>
+
+</details>
+
+</div>
+
+<div align="center">
+
+<!-- <DYNFIELD:WAYS_TO_USE_TSCANNER> -->
+<details>
+<summary>Other ways to use TScanner</summary>
+<br />
 
 <table>
   <tr>
-    <th>PR Comment - Issues Found</th>
-    <th>PR Comment - No Issues Found</th>
+    <th>Package</th>
+    <th>Description</th>
   </tr>
   <tr>
-    <td><img src="https://cdn.jsdelivr.net/gh/lucasvtiradentes/tscanner@main/.github/image/tscanner-pr-comment-issues-found.png" alt="PR Comment - Issues Found"></td>
-    <td><img src="https://cdn.jsdelivr.net/gh/lucasvtiradentes/tscanner@main/.github/image/tscanner-pr-comment-no-issues.png" alt="PR Comment - No Issues"></td>
+    <td>
+      <div align="center">
+        <b><a href="https://github.com/lucasvtiradentes/tscanner/tree/main/packages/vscode-extension#readme">VSCode Extension</a></b>
+        <br />
+        <br />
+        <a href="https://marketplace.visualstudio.com/items?itemName=lucasvtiradentes.tscanner-vscode"><img src="https://img.shields.io/badge/VS%20Code-Extension-blue.svg" alt="VS Marketplace"></a><br /><a href="https://open-vsx.org/extension/lucasvtiradentes/tscanner-vscode"><img src="https://img.shields.io/open-vsx/v/lucasvtiradentes/tscanner-vscode?label=Open%20VSX&logo=data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2aWV3Qm94PSI0LjYgNSA5Ni4yIDEyMi43IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxwYXRoIGQ9Ik0zMCA0NC4yTDUyLjYgNUg3LjN6TTQuNiA4OC41aDQ1LjNMMjcuMiA0OS40em01MSAwbDIyLjYgMzkuMiAyMi42LTM5LjJ6IiBmaWxsPSIjYzE2MGVmIi8+CiAgPHBhdGggZD0iTTUyLjYgNUwzMCA0NC4yaDQ1LjJ6TTI3LjIgNDkuNGwyMi43IDM5LjEgMjIuNi0zOS4xem01MSAwTDU1LjYgODguNWg0NS4yeiIgZmlsbD0iI2E2MGVlNSIvPgo8L3N2Zz4=&labelColor=a60ee5&color=374151" alt="Open VSX"></a>
+      </div>
+    </td>
+    <td>Real-time sidebar integration with Git-aware branch scanning</td>
+  </tr>
+  <tr>
+    <td>
+      <div align="center">
+        <b><a href="https://github.com/lucasvtiradentes/tscanner/tree/main/packages/cli#readme">CLI</a></b>
+        <br />
+        <br />
+        <a href="https://www.npmjs.com/package/tscanner"><img src="https://img.shields.io/npm/v/tscanner?label=npm&logo=npm&logoColor=white&labelColor=CB3837&color=374151" alt="npm"></a>
+      </div>
+    </td>
+    <td>Terminal scanning, CI/CD integration, pre-commit hooks</td>
   </tr>
 </table>
 
+</details>
+<!-- </DYNFIELD:WAYS_TO_USE_TSCANNER> -->
+
+</div>
+
+<!-- <DYNFIELD:FEATURES> -->
 ## ⭐ Features<a href="#TOC"><img align="right" src="https://cdn.jsdelivr.net/gh/lucasvtiradentes/tscanner@main/.github/image/up_arrow.png" width="22"></a>
 
-- **Smart PR Comments** - Auto-posted summary with clickable file links to exact lines
-- **Git-Aware Scanning** - Full codebase or only files changed in PR
-- **Dual Grouping** - View issues by file or by rule in the same comment
-- **23+ Built-in Rules** - Type safety, imports, and code quality checks
-- **Custom Rules** - Regex patterns, scripts, or AI-powered validation
-- **Flexible Control** - Block PR or continue with warnings
+- **Your Rules, Enforced** - 39 built-in checks + define your own with regex, scripts, or AI
+- **Focus on What Matters** - Scan your branch changes only, or audit the full codebase
+- **Catch Before Merge** - PR comments show violations with clickable links to exact lines
+- **One Comment, Updated** - No spam, same comment updated on each push
+- **Block or Warn** - Fail the check or just inform, your choice
+<!-- </DYNFIELD:FEATURES> -->
 
-## 📖 Usage<a href="#TOC"><img align="right" src="https://cdn.jsdelivr.net/gh/lucasvtiradentes/tscanner@main/.github/image/up_arrow.png" width="22"></a>
+<!-- <DYNFIELD:MOTIVATION> -->
+## ❓ Motivation<a href="#TOC"><img align="right" src="https://cdn.jsdelivr.net/gh/lucasvtiradentes/tscanner@main/.github/image/up_arrow.png" width="22"></a>
 
-### Quick Start
+AI generates code fast, but it doesn't know your project's conventions, preferred patterns, or forbidden shortcuts. You end up reviewing the same issues over and over.
 
-**Scan full codebase:**
+TScanner lets you define those rules once. Every AI-generated file, every PR, every save: automatically checked against your standards. Stop repeating yourself in code reviews.
+<!-- </DYNFIELD:MOTIVATION> -->
+
+## 🚀 Quick Start<a href="#TOC"><img align="right" src="https://cdn.jsdelivr.net/gh/lucasvtiradentes/tscanner@main/.github/image/up_arrow.png" width="22"></a>
+
+<!-- <DYNFIELD:QUICK_START_GITHUB_ACTION> -->
+1. Create `.github/workflows/tscanner.yml`:
 
 ```yaml
 name: Code Quality
@@ -50,21 +119,66 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: lucasvtiradentes/tscanner-action@v0.0.14
+      - uses: lucasvtiradentes/tscanner-action@v0.0.19
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-**Scan only changed files (recommended for PRs):**
+2. Add TScanner config to your repo (run `tscanner init` or create `.tscanner/config.jsonc`)
+3. Open a PR and watch the magic happen!
+<!-- </DYNFIELD:QUICK_START_GITHUB_ACTION> -->
+
+## 📖 Usage<a href="#TOC"><img align="right" src="https://cdn.jsdelivr.net/gh/lucasvtiradentes/tscanner@main/.github/image/up_arrow.png" width="22"></a>
+
+### Scan Modes
+
+<div align="center">
+<table>
+  <tr>
+    <th>Full Codebase</th>
+    <th>Changed Files Only (Recommended)</th>
+  </tr>
+  <tr>
+    <td>Scan all files in the repository</td>
+    <td>Scan only files changed in the PR</td>
+  </tr>
+  <tr>
+    <td>
 
 ```yaml
-- uses: lucasvtiradentes/tscanner-action@v0.0.14
+- uses: lucasvtiradentes/tscanner-action@v0.0.19
+  with:
+    github-token: ${{ secrets.GITHUB_TOKEN }}
+```
+
+</td>
+    <td>
+
+```yaml
+- uses: lucasvtiradentes/tscanner-action@v0.0.19
   with:
     github-token: ${{ secrets.GITHUB_TOKEN }}
     target-branch: 'origin/main'
 ```
 
-### Additional examples
+</td>
+  </tr>
+</table>
+</div>
+
+### Inputs
+
+| Input | Required | Default | Description |
+|-------|----------|---------|-------------|
+| `github-token` | Yes | - | GitHub token for posting PR comments (`${{ secrets.GITHUB_TOKEN }}`) |
+| `target-branch` | - | - | Target branch to compare (enables branch mode). Example: `origin/main` |
+| `config-path` | - | `.tscanner` | Path to tscanner config directory containing `config.json` |
+| `tscanner-version` | - | `latest` | NPM version of tscanner CLI to install |
+| `group-by` | - | `file` | Primary grouping mode: `file` or `rule` |
+| `continue-on-error` | - | `false` | Continue workflow even if errors found (`true`/`false`) |
+| `timezone` | - | `UTC` | Timezone for timestamps in PR comments. Example: `America/New_York` |
+
+### Examples
 
 <details>
 <summary><b>Continue on Errors</b></summary>
@@ -72,7 +186,7 @@ jobs:
 Scan but don't fail the workflow:
 
 ```yaml
-- uses: lucasvtiradentes/tscanner-action@v0.0.14
+- uses: lucasvtiradentes/tscanner-action@v0.0.19
   with:
     github-token: ${{ secrets.GITHUB_TOKEN }}
     continue-on-error: 'true'
@@ -86,7 +200,7 @@ Scan but don't fail the workflow:
 Primary grouping by rule instead of file:
 
 ```yaml
-- uses: lucasvtiradentes/tscanner-action@v0.0.14
+- uses: lucasvtiradentes/tscanner-action@v0.0.19
   with:
     github-token: ${{ secrets.GITHUB_TOKEN }}
     group-by: 'rule'
@@ -100,7 +214,7 @@ Primary grouping by rule instead of file:
 Use non-standard config location:
 
 ```yaml
-- uses: lucasvtiradentes/tscanner-action@v0.0.14
+- uses: lucasvtiradentes/tscanner-action@v0.0.19
   with:
     github-token: ${{ secrets.GITHUB_TOKEN }}
     config-path: 'config/tscanner'
@@ -114,7 +228,7 @@ Use non-standard config location:
 Pin to exact CLI version:
 
 ```yaml
-- uses: lucasvtiradentes/tscanner-action@v0.0.14
+- uses: lucasvtiradentes/tscanner-action@v0.0.19
   with:
     github-token: ${{ secrets.GITHUB_TOKEN }}
     tscanner-version: '0.1.5'
@@ -128,7 +242,7 @@ Pin to exact CLI version:
 All options:
 
 ```yaml
-- uses: lucasvtiradentes/tscanner-action@v0.0.14
+- uses: lucasvtiradentes/tscanner-action@v0.0.19
   with:
     github-token: ${{ secrets.GITHUB_TOKEN }}
     target-branch: 'origin/develop'
@@ -141,33 +255,454 @@ All options:
 
 </details>
 
-## 📋 Inputs<a href="#TOC"><img align="right" src="https://cdn.jsdelivr.net/gh/lucasvtiradentes/tscanner@main/.github/image/up_arrow.png" width="22"></a>
+<!-- <DYNFIELD:COMMON_SECTION_CONFIG> -->
+## ⚙️ Configuration<a href="#TOC"><img align="right" src="https://cdn.jsdelivr.net/gh/lucasvtiradentes/tscanner@main/.github/image/up_arrow.png" width="22"></a>
 
-| Input | Required | Default | Description |
-|-------|----------|---------|-------------|
-| `github-token` | Yes | - | GitHub token for posting PR comments (`${{ secrets.GITHUB_TOKEN }}`) |
-| `target-branch` | - | - | Target branch to compare (enables branch mode). Example: `origin/main` |
-| `config-path` | - | `.tscanner` | Path to tscanner config directory containing `config.jsonc` |
-| `tscanner-version` | - | `latest` | NPM version of tscanner CLI to install |
-| `group-by` | - | `file` | Primary grouping mode: `file` or `rule` |
-| `continue-on-error` | - | `false` | Continue workflow even if errors found (`true`/`false`) |
-| `timezone` | - | `UTC` | Timezone for timestamps in PR comments. Example: `America/New_York` |
+To scan your code, you need to set up the rules in the TScanner config folder. Here's how to get started:
 
+1. **VSCode Extension**: TScanner icon in the status bar → `Manage Rules` → Select desired rules → `Save`
+2. **CLI**: Run `tscanner init` in your project root
+3. **Manual**: Copy the default config below to `.tscanner/config.json`
+
+The default configuration is:
+
+```json
+{
+  "$schema": "https://unpkg.com/tscanner@0.0.21/schema.json",
+  "builtinRules": {
+    "no-any-type": {}
+  },
+  "customRules": {},
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx",
+    "**/*.mjs",
+    "**/*.cjs"
+  ],
+  "exclude": [
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/build/**",
+    "**/.git/**"
+  ]
+}
+```
+
+**Inline Disables:**
+
+```typescript
+// tscanner-disable-next-line no-any-type
+const data: any = fetchData();
+
+// tscanner-disable-file
+// Entire file is skipped
+```
+<!-- </DYNFIELD:COMMON_SECTION_CONFIG> -->
+
+<!-- <DYNFIELD:RULES> -->
+## 📋 Rules<a href="#TOC"><img align="right" src="https://cdn.jsdelivr.net/gh/lucasvtiradentes/tscanner@main/.github/image/up_arrow.png" width="22"></a>
+
+Customize TScanner to validate what matters to your project while maintaining consistency.
+
+<div align="center">
+
+<table>
+  <tr>
+    <th width="100">Type</th>
+    <th width="250">Use Case</th>
+    <th width="400">Example</th>
+  </tr>
+  <tr>
+    <td><b><a href="packages/core/crates/core/src/rules">Built-in</a></b></td>
+    <td>39 ready-to-use AST rules</td>
+    <td><code>no-any-type</code>, <code>prefer-const</code>, <code>no-console-log</code></td>
+  </tr>
+  <tr>
+    <td><b>Regex</b></td>
+    <td>Simple text patterns</td>
+    <td>Match <code>TODO</code> comments, banned imports, naming conventions</td>
+  </tr>
+  <tr>
+    <td><b>Script</b></td>
+    <td>Complex logic via JS</td>
+    <td>Validate file naming, check if tests exist, enforce folder structure</td>
+  </tr>
+  <tr>
+    <td><b>AI</b></td>
+    <td>Semantic validation via prompts</td>
+    <td>Enforce React Hook Form usage, validate API integration patterns with SWR/TanStack</td>
+  </tr>
+</table>
+
+</div>
+
+<div align="center">
+
+<details>
+<summary>Built-in rules (39)</summary>
+<br />
+
+<div align="left">
+
+#### Type Safety (6)
+
+</div>
+
+<table>
+  <tr>
+    <th width="250">Rule</th>
+    <th width="450">Description</th>
+    <th width="100">Also in</th>
+  </tr>
+  <tr>
+    <td align="left"><a href="https://github.com/lucasvtiradentes/tscanner/blob/main/packages/core/crates/core/src/rules/no_any_type.rs"><code>no-any-type</code></a> <sup>TS</sup></td>
+    <td align="left">Detects usage of TypeScript 'any' type (<code>: any</code> and <code>as any</code>). Using 'any' defeats the purpose of TypeScript's type system.</td>
+    <td align="left"><a href="https://typescript-eslint.io/rules/no-explicit-any"><img src="https://img.shields.io/badge/-ESLint-4B32C3?logo=eslint&logoColor=white" alt="ESLint"></a> <a href="https://biomejs.dev/linter/rules/no-explicit-any"><img src="https://img.shields.io/badge/-Biome-60A5FA?logo=biome&logoColor=white" alt="Biome"></a></td>
+  </tr>
+  <tr>
+    <td align="left"><a href="https://github.com/lucasvtiradentes/tscanner/blob/main/packages/core/crates/core/src/rules/no_implicit_any.rs"><code>no-implicit-any</code></a> <sup>TS</sup></td>
+    <td align="left">Detects function parameters without type annotations that implicitly have 'any' type.</td>
+    <td align="left"></td>
+  </tr>
+  <tr>
+    <td align="left"><a href="https://github.com/lucasvtiradentes/tscanner/blob/main/packages/core/crates/core/src/rules/no_inferrable_types.rs"><code>no-inferrable-types</code></a> <sup>TS</sup></td>
+    <td align="left">Disallows explicit type annotations on variables initialized with literal values. TypeScript can infer these types automatically.</td>
+    <td align="left"><a href="https://typescript-eslint.io/rules/no-inferrable-types"><img src="https://img.shields.io/badge/-ESLint-4B32C3?logo=eslint&logoColor=white" alt="ESLint"></a> <a href="https://biomejs.dev/linter/rules/no-inferrable-types"><img src="https://img.shields.io/badge/-Biome-60A5FA?logo=biome&logoColor=white" alt="Biome"></a></td>
+  </tr>
+  <tr>
+    <td align="left"><a href="https://github.com/lucasvtiradentes/tscanner/blob/main/packages/core/crates/core/src/rules/no_non_null_assertion.rs"><code>no-non-null-assertion</code></a> <sup>TS</sup></td>
+    <td align="left">Disallows the non-null assertion operator (!). Use proper null checks or optional chaining instead.</td>
+    <td align="left"><a href="https://typescript-eslint.io/rules/no-non-null-assertion"><img src="https://img.shields.io/badge/-ESLint-4B32C3?logo=eslint&logoColor=white" alt="ESLint"></a> <a href="https://biomejs.dev/linter/rules/no-non-null-assertion"><img src="https://img.shields.io/badge/-Biome-60A5FA?logo=biome&logoColor=white" alt="Biome"></a></td>
+  </tr>
+  <tr>
+    <td align="left"><a href="https://github.com/lucasvtiradentes/tscanner/blob/main/packages/core/crates/core/src/rules/no_single_or_array_union.rs"><code>no-single-or-array-union</code></a> <sup>TS</sup></td>
+    <td align="left">Disallows union types that combine a type with its array form (e.g., <code>string | string[]</code>, <code>number | number[]</code>). Prefer using a consistent type to avoid handling multiple cases in function implementations.</td>
+    <td align="left"></td>
+  </tr>
+  <tr>
+    <td align="left"><a href="https://github.com/lucasvtiradentes/tscanner/blob/main/packages/core/crates/core/src/rules/no_unnecessary_type_assertion.rs"><code>no-unnecessary-type-assertion</code></a> <sup>TS</sup></td>
+    <td align="left">Disallows type assertions on values that are already of the asserted type (e.g., "hello" as string, 123 as number).</td>
+    <td align="left"><a href="https://typescript-eslint.io/rules/no-unnecessary-type-assertion"><img src="https://img.shields.io/badge/-ESLint-4B32C3?logo=eslint&logoColor=white" alt="ESLint"></a></td>
+  </tr>
+</table>
+
+<div align="left">
+
+#### Code Quality (14)
+
+</div>
+
+<table>
+  <tr>
+    <th width="250">Rule</th>
+    <th width="450">Description</th>
+    <th width="100">Also in</th>
+  </tr>
+  <tr>
+    <td align="left"><a href="https://github.com/lucasvtiradentes/tscanner/blob/main/packages/core/crates/core/src/rules/max_function_length.rs"><code>max-function-length</code></a></td>
+    <td align="left">Enforces a maximum number of statements in functions (default: 50). Long functions are harder to understand and maintain.</td>
+    <td align="left"><a href="https://eslint.org/docs/latest/rules/max-lines-per-function"><img src="https://img.shields.io/badge/-ESLint-4B32C3?logo=eslint&logoColor=white" alt="ESLint"></a></td>
+  </tr>
+  <tr>
+    <td align="left"><a href="https://github.com/lucasvtiradentes/tscanner/blob/main/packages/core/crates/core/src/rules/max_params.rs"><code>max-parameters</code></a></td>
+    <td align="left">Limits the number of parameters in a function. Functions with many parameters should use an options object instead.</td>
+    <td align="left"><a href="https://eslint.org/docs/latest/rules/max-params"><img src="https://img.shields.io/badge/-ESLint-4B32C3?logo=eslint&logoColor=white" alt="ESLint"></a></td>
+  </tr>
+  <tr>
+    <td align="left"><a href="https://github.com/lucasvtiradentes/tscanner/blob/main/packages/core/crates/core/src/rules/no_async_without_await.rs"><code>no-async-without-await</code></a></td>
+    <td align="left">Disallows async functions that don't use await. The async keyword is unnecessary if await is never used.</td>
+    <td align="left"><a href="https://eslint.org/docs/latest/rules/require-await"><img src="https://img.shields.io/badge/-ESLint-4B32C3?logo=eslint&logoColor=white" alt="ESLint"></a> <a href="https://biomejs.dev/linter/rules/use-await"><img src="https://img.shields.io/badge/-Biome-60A5FA?logo=biome&logoColor=white" alt="Biome"></a></td>
+  </tr>
+  <tr>
+    <td align="left"><a href="https://github.com/lucasvtiradentes/tscanner/blob/main/packages/core/crates/core/src/rules/no_console_log.rs"><code>no-console-log</code></a></td>
+    <td align="left">Finds console.log() statements in code. Console statements should be removed before committing to production.</td>
+    <td align="left"><a href="https://eslint.org/docs/latest/rules/no-console"><img src="https://img.shields.io/badge/-ESLint-4B32C3?logo=eslint&logoColor=white" alt="ESLint"></a> <a href="https://biomejs.dev/linter/rules/no-console"><img src="https://img.shields.io/badge/-Biome-60A5FA?logo=biome&logoColor=white" alt="Biome"></a></td>
+  </tr>
+  <tr>
+    <td align="left"><a href="https://github.com/lucasvtiradentes/tscanner/blob/main/packages/core/crates/core/src/rules/no_else_return.rs"><code>no-else-return</code></a></td>
+    <td align="left">Disallows else blocks after return statements. The else is unnecessary since the function already returned.</td>
+    <td align="left"><a href="https://eslint.org/docs/latest/rules/no-else-return"><img src="https://img.shields.io/badge/-ESLint-4B32C3?logo=eslint&logoColor=white" alt="ESLint"></a> <a href="https://biomejs.dev/linter/rules/no-useless-else"><img src="https://img.shields.io/badge/-Biome-60A5FA?logo=biome&logoColor=white" alt="Biome"></a></td>
+  </tr>
+  <tr>
+    <td align="left"><a href="https://github.com/lucasvtiradentes/tscanner/blob/main/packages/core/crates/core/src/rules/no_empty_class.rs"><code>no-empty-class</code></a></td>
+    <td align="left">Disallows empty classes without methods or properties.</td>
+    <td align="left"></td>
+  </tr>
+  <tr>
+    <td align="left"><a href="https://github.com/lucasvtiradentes/tscanner/blob/main/packages/core/crates/core/src/rules/no_empty_function.rs"><code>no-empty-function</code></a></td>
+    <td align="left">Disallows empty functions and methods. Empty functions are often leftovers from incomplete code.</td>
+    <td align="left"><a href="https://eslint.org/docs/latest/rules/no-empty-function"><img src="https://img.shields.io/badge/-ESLint-4B32C3?logo=eslint&logoColor=white" alt="ESLint"></a></td>
+  </tr>
+  <tr>
+    <td align="left"><a href="https://github.com/lucasvtiradentes/tscanner/blob/main/packages/core/crates/core/src/rules/no_empty_interface.rs"><code>no-empty-interface</code></a> <sup>TS</sup></td>
+    <td align="left">Disallows empty interface declarations. Empty interfaces are equivalent to {} and usually indicate incomplete code.</td>
+    <td align="left"><a href="https://typescript-eslint.io/rules/no-empty-interface"><img src="https://img.shields.io/badge/-ESLint-4B32C3?logo=eslint&logoColor=white" alt="ESLint"></a> <a href="https://biomejs.dev/linter/rules/no-empty-interface"><img src="https://img.shields.io/badge/-Biome-60A5FA?logo=biome&logoColor=white" alt="Biome"></a></td>
+  </tr>
+  <tr>
+    <td align="left"><a href="https://github.com/lucasvtiradentes/tscanner/blob/main/packages/core/crates/core/src/rules/no_magic_numbers.rs"><code>no-magic-numbers</code></a></td>
+    <td align="left">Detects magic numbers in code (literals other than 0, 1, -1). Use named constants instead for better readability and maintainability.</td>
+    <td align="left"><a href="https://eslint.org/docs/latest/rules/no-magic-numbers"><img src="https://img.shields.io/badge/-ESLint-4B32C3?logo=eslint&logoColor=white" alt="ESLint"></a></td>
+  </tr>
+  <tr>
+    <td align="left"><a href="https://github.com/lucasvtiradentes/tscanner/blob/main/packages/core/crates/core/src/rules/no_nested_ternary.rs"><code>no-nested-ternary</code></a></td>
+    <td align="left">Disallows nested ternary expressions. Nested ternaries are hard to read and should be replaced with if-else statements.</td>
+    <td align="left"><a href="https://eslint.org/docs/latest/rules/no-nested-ternary"><img src="https://img.shields.io/badge/-ESLint-4B32C3?logo=eslint&logoColor=white" alt="ESLint"></a> <a href="https://biomejs.dev/linter/rules/no-nested-ternary"><img src="https://img.shields.io/badge/-Biome-60A5FA?logo=biome&logoColor=white" alt="Biome"></a></td>
+  </tr>
+  <tr>
+    <td align="left"><a href="https://github.com/lucasvtiradentes/tscanner/blob/main/packages/core/crates/core/src/rules/no_return_await.rs"><code>no-return-await</code></a></td>
+    <td align="left">Disallows redundant 'return await' in async functions. The await is unnecessary since the function already returns a Promise.</td>
+    <td align="left"><a href="https://typescript-eslint.io/rules/return-await"><img src="https://img.shields.io/badge/-ESLint-4B32C3?logo=eslint&logoColor=white" alt="ESLint"></a></td>
+  </tr>
+  <tr>
+    <td align="left"><a href="https://github.com/lucasvtiradentes/tscanner/blob/main/packages/core/crates/core/src/rules/no_todo_comments.rs"><code>no-todo-comments</code></a></td>
+    <td align="left">Detects TODO, FIXME, and similar comment markers.</td>
+    <td align="left"><a href="https://eslint.org/docs/latest/rules/no-warning-comments"><img src="https://img.shields.io/badge/-ESLint-4B32C3?logo=eslint&logoColor=white" alt="ESLint"></a></td>
+  </tr>
+  <tr>
+    <td align="left"><a href="https://github.com/lucasvtiradentes/tscanner/blob/main/packages/core/crates/core/src/rules/no_unused_vars.rs"><code>no-unused-variables</code></a></td>
+    <td align="left">Detects variables that are declared but never used in the code.</td>
+    <td align="left"><a href="https://eslint.org/docs/latest/rules/no-unused-vars"><img src="https://img.shields.io/badge/-ESLint-4B32C3?logo=eslint&logoColor=white" alt="ESLint"></a> <a href="https://biomejs.dev/linter/rules/no-unused-variables"><img src="https://img.shields.io/badge/-Biome-60A5FA?logo=biome&logoColor=white" alt="Biome"></a></td>
+  </tr>
+  <tr>
+    <td align="left"><a href="https://github.com/lucasvtiradentes/tscanner/blob/main/packages/core/crates/core/src/rules/no_useless_catch.rs"><code>no-useless-catch</code></a></td>
+    <td align="left">Disallows catch blocks that only rethrow the caught error. Remove the try-catch or add meaningful error handling.</td>
+    <td align="left"><a href="https://eslint.org/docs/latest/rules/no-useless-catch"><img src="https://img.shields.io/badge/-ESLint-4B32C3?logo=eslint&logoColor=white" alt="ESLint"></a> <a href="https://biomejs.dev/linter/rules/no-useless-catch"><img src="https://img.shields.io/badge/-Biome-60A5FA?logo=biome&logoColor=white" alt="Biome"></a></td>
+  </tr>
+</table>
+
+<div align="left">
+
+#### Bug Prevention (4)
+
+</div>
+
+<table>
+  <tr>
+    <th width="250">Rule</th>
+    <th width="450">Description</th>
+    <th width="100">Also in</th>
+  </tr>
+  <tr>
+    <td align="left"><a href="https://github.com/lucasvtiradentes/tscanner/blob/main/packages/core/crates/core/src/rules/consistent_return.rs"><code>consistent-return</code></a></td>
+    <td align="left">Requires consistent return behavior in functions. Either all code paths return a value or none do.</td>
+    <td align="left"><a href="https://eslint.org/docs/latest/rules/consistent-return"><img src="https://img.shields.io/badge/-ESLint-4B32C3?logo=eslint&logoColor=white" alt="ESLint"></a></td>
+  </tr>
+  <tr>
+    <td align="left"><a href="https://github.com/lucasvtiradentes/tscanner/blob/main/packages/core/crates/core/src/rules/no_constant_condition.rs"><code>no-constant-condition</code></a></td>
+    <td align="left">Disallows constant expressions in conditions (if/while/for/ternary). Likely a programming error.</td>
+    <td align="left"><a href="https://eslint.org/docs/latest/rules/no-constant-condition"><img src="https://img.shields.io/badge/-ESLint-4B32C3?logo=eslint&logoColor=white" alt="ESLint"></a> <a href="https://biomejs.dev/linter/rules/no-constant-condition"><img src="https://img.shields.io/badge/-Biome-60A5FA?logo=biome&logoColor=white" alt="Biome"></a></td>
+  </tr>
+  <tr>
+    <td align="left"><a href="https://github.com/lucasvtiradentes/tscanner/blob/main/packages/core/crates/core/src/rules/no_floating_promises.rs"><code>no-floating-promises</code></a> <sup>TS</sup></td>
+    <td align="left">Disallows floating promises (promises used as statements without await, .then(), or .catch()). Unhandled promises can lead to silent failures.</td>
+    <td align="left"><a href="https://typescript-eslint.io/rules/no-floating-promises"><img src="https://img.shields.io/badge/-ESLint-4B32C3?logo=eslint&logoColor=white" alt="ESLint"></a> <a href="https://biomejs.dev/linter/rules/no-floating-promises"><img src="https://img.shields.io/badge/-Biome-60A5FA?logo=biome&logoColor=white" alt="Biome"></a></td>
+  </tr>
+  <tr>
+    <td align="left"><a href="https://github.com/lucasvtiradentes/tscanner/blob/main/packages/core/crates/core/src/rules/no_unreachable_code.rs"><code>no-unreachable-code</code></a></td>
+    <td align="left">Detects code after return, throw, break, or continue statements. This code will never execute.</td>
+    <td align="left"><a href="https://eslint.org/docs/latest/rules/no-unreachable"><img src="https://img.shields.io/badge/-ESLint-4B32C3?logo=eslint&logoColor=white" alt="ESLint"></a> <a href="https://biomejs.dev/linter/rules/no-unreachable"><img src="https://img.shields.io/badge/-Biome-60A5FA?logo=biome&logoColor=white" alt="Biome"></a></td>
+  </tr>
+</table>
+
+<div align="left">
+
+#### Variables (3)
+
+</div>
+
+<table>
+  <tr>
+    <th width="250">Rule</th>
+    <th width="450">Description</th>
+    <th width="100">Also in</th>
+  </tr>
+  <tr>
+    <td align="left"><a href="https://github.com/lucasvtiradentes/tscanner/blob/main/packages/core/crates/core/src/rules/no_shadow.rs"><code>no-shadow</code></a></td>
+    <td align="left">Disallows variable declarations that shadow variables in outer scopes. Shadowing can lead to confusing code and subtle bugs.</td>
+    <td align="left"><a href="https://eslint.org/docs/latest/rules/no-shadow"><img src="https://img.shields.io/badge/-ESLint-4B32C3?logo=eslint&logoColor=white" alt="ESLint"></a></td>
+  </tr>
+  <tr>
+    <td align="left"><a href="https://github.com/lucasvtiradentes/tscanner/blob/main/packages/core/crates/core/src/rules/no_var.rs"><code>no-var</code></a></td>
+    <td align="left">Disallows the use of 'var' keyword. Use 'let' or 'const' instead for block-scoped variables.</td>
+    <td align="left"><a href="https://eslint.org/docs/latest/rules/no-var"><img src="https://img.shields.io/badge/-ESLint-4B32C3?logo=eslint&logoColor=white" alt="ESLint"></a> <a href="https://biomejs.dev/linter/rules/no-var"><img src="https://img.shields.io/badge/-Biome-60A5FA?logo=biome&logoColor=white" alt="Biome"></a></td>
+  </tr>
+  <tr>
+    <td align="left"><a href="https://github.com/lucasvtiradentes/tscanner/blob/main/packages/core/crates/core/src/rules/prefer_const.rs"><code>prefer-const</code></a></td>
+    <td align="left">Suggests using 'const' instead of 'let' when variables are never reassigned.</td>
+    <td align="left"><a href="https://eslint.org/docs/latest/rules/prefer-const"><img src="https://img.shields.io/badge/-ESLint-4B32C3?logo=eslint&logoColor=white" alt="ESLint"></a> <a href="https://biomejs.dev/linter/rules/use-const"><img src="https://img.shields.io/badge/-Biome-60A5FA?logo=biome&logoColor=white" alt="Biome"></a></td>
+  </tr>
+</table>
+
+<div align="left">
+
+#### Imports (8)
+
+</div>
+
+<table>
+  <tr>
+    <th width="250">Rule</th>
+    <th width="450">Description</th>
+    <th width="100">Also in</th>
+  </tr>
+  <tr>
+    <td align="left"><a href="https://github.com/lucasvtiradentes/tscanner/blob/main/packages/core/crates/core/src/rules/no_absolute_imports.rs"><code>no-absolute-imports</code></a></td>
+    <td align="left">Disallows absolute imports without alias. Prefer relative or aliased imports.</td>
+    <td align="left"></td>
+  </tr>
+  <tr>
+    <td align="left"><a href="https://github.com/lucasvtiradentes/tscanner/blob/main/packages/core/crates/core/src/rules/no_alias_imports.rs"><code>no-alias-imports</code></a></td>
+    <td align="left">Disallows aliased imports (starting with @). Prefer relative imports.</td>
+    <td align="left"></td>
+  </tr>
+  <tr>
+    <td align="left"><a href="https://github.com/lucasvtiradentes/tscanner/blob/main/packages/core/crates/core/src/rules/no_default_export.rs"><code>no-default-export</code></a></td>
+    <td align="left">Disallows default exports. Named exports are preferred for better refactoring support and explicit imports.</td>
+    <td align="left"><a href="https://biomejs.dev/linter/rules/no-default-export"><img src="https://img.shields.io/badge/-Biome-60A5FA?logo=biome&logoColor=white" alt="Biome"></a></td>
+  </tr>
+  <tr>
+    <td align="left"><a href="https://github.com/lucasvtiradentes/tscanner/blob/main/packages/core/crates/core/src/rules/no_duplicate_imports.rs"><code>no-duplicate-imports</code></a></td>
+    <td align="left">Disallows multiple import statements from the same module. Merge them into a single import.</td>
+    <td align="left"><a href="https://eslint.org/docs/latest/rules/no-duplicate-imports"><img src="https://img.shields.io/badge/-ESLint-4B32C3?logo=eslint&logoColor=white" alt="ESLint"></a> <a href="https://biomejs.dev/linter/rules/no-duplicate-json-keys"><img src="https://img.shields.io/badge/-Biome-60A5FA?logo=biome&logoColor=white" alt="Biome"></a></td>
+  </tr>
+  <tr>
+    <td align="left"><a href="https://github.com/lucasvtiradentes/tscanner/blob/main/packages/core/crates/core/src/rules/no_dynamic_import.rs"><code>no-dynamic-import</code></a></td>
+    <td align="left">Disallows dynamic import() expressions. Dynamic imports make static analysis harder and can impact bundle optimization.</td>
+    <td align="left"></td>
+  </tr>
+  <tr>
+    <td align="left"><a href="https://github.com/lucasvtiradentes/tscanner/blob/main/packages/core/crates/core/src/rules/no_forwarded_exports.rs"><code>no-forwarded-exports</code></a></td>
+    <td align="left">Disallows re-exporting from other modules. This includes direct re-exports (export { X } from 'module'), star re-exports (export * from 'module'), and re-exporting imported values.</td>
+    <td align="left"><a href="https://biomejs.dev/linter/rules/no-re-export-all"><img src="https://img.shields.io/badge/-Biome-60A5FA?logo=biome&logoColor=white" alt="Biome"></a></td>
+  </tr>
+  <tr>
+    <td align="left"><a href="https://github.com/lucasvtiradentes/tscanner/blob/main/packages/core/crates/core/src/rules/no_nested_require.rs"><code>no-nested-require</code></a></td>
+    <td align="left">Disallows require() calls inside functions, blocks, or conditionals. Require statements should be at the top level for static analysis.</td>
+    <td align="left"><a href="https://eslint.org/docs/latest/rules/global-require"><img src="https://img.shields.io/badge/-ESLint-4B32C3?logo=eslint&logoColor=white" alt="ESLint"></a></td>
+  </tr>
+  <tr>
+    <td align="left"><a href="https://github.com/lucasvtiradentes/tscanner/blob/main/packages/core/crates/core/src/rules/no_relative_imports.rs"><code>no-relative-imports</code></a></td>
+    <td align="left">Detects relative imports (starting with './' or '../'). Prefer absolute imports with @ prefix for better maintainability.</td>
+    <td align="left"></td>
+  </tr>
+</table>
+
+<div align="left">
+
+#### Style (4)
+
+</div>
+
+<table>
+  <tr>
+    <th width="250">Rule</th>
+    <th width="450">Description</th>
+    <th width="100">Also in</th>
+  </tr>
+  <tr>
+    <td align="left"><a href="https://github.com/lucasvtiradentes/tscanner/blob/main/packages/core/crates/core/src/rules/prefer_interface_over_type.rs"><code>prefer-interface-over-type</code></a> <sup>TS</sup></td>
+    <td align="left">Suggests using 'interface' keyword instead of 'type' for consistency.</td>
+    <td align="left"><a href="https://typescript-eslint.io/rules/consistent-type-definitions"><img src="https://img.shields.io/badge/-ESLint-4B32C3?logo=eslint&logoColor=white" alt="ESLint"></a></td>
+  </tr>
+  <tr>
+    <td align="left"><a href="https://github.com/lucasvtiradentes/tscanner/blob/main/packages/core/crates/core/src/rules/prefer_nullish_coalescing.rs"><code>prefer-nullish-coalescing</code></a></td>
+    <td align="left">Suggests using nullish coalescing (??) instead of logical OR (||) for default values. The || operator treats 0, "", and false as falsy, which may not be intended.</td>
+    <td align="left"><a href="https://typescript-eslint.io/rules/prefer-nullish-coalescing"><img src="https://img.shields.io/badge/-ESLint-4B32C3?logo=eslint&logoColor=white" alt="ESLint"></a></td>
+  </tr>
+  <tr>
+    <td align="left"><a href="https://github.com/lucasvtiradentes/tscanner/blob/main/packages/core/crates/core/src/rules/prefer_optional_chain.rs"><code>prefer-optional-chain</code></a></td>
+    <td align="left">Suggests using optional chaining (?.) instead of logical AND (&&) chains for null checks.</td>
+    <td align="left"><a href="https://typescript-eslint.io/rules/prefer-optional-chain"><img src="https://img.shields.io/badge/-ESLint-4B32C3?logo=eslint&logoColor=white" alt="ESLint"></a> <a href="https://biomejs.dev/linter/rules/use-optional-chain"><img src="https://img.shields.io/badge/-Biome-60A5FA?logo=biome&logoColor=white" alt="Biome"></a></td>
+  </tr>
+  <tr>
+    <td align="left"><a href="https://github.com/lucasvtiradentes/tscanner/blob/main/packages/core/crates/core/src/rules/prefer_type_over_interface.rs"><code>prefer-type-over-interface</code></a> <sup>TS</sup></td>
+    <td align="left">Suggests using 'type' keyword instead of 'interface' for consistency. Type aliases are more flexible and composable.</td>
+    <td align="left"><a href="https://typescript-eslint.io/rules/consistent-type-definitions"><img src="https://img.shields.io/badge/-ESLint-4B32C3?logo=eslint&logoColor=white" alt="ESLint"></a></td>
+  </tr>
+</table>
+
+</details>
+
+<details>
+<summary>Regex rules examples</summary>
+<br />
+<div align="left">
+
+Define patterns to match in your code using regular expressions:
+
+```json
+{
+  "customRules": {
+    "no-todos": {
+      "type": "regex",
+      "pattern": "TODO:|FIXME:",
+      "message": "Remove TODO comments before merging"
+    },
+    "no-debug-logs": {
+      "type": "regex",
+      "pattern": "console\\.(log|debug|info)",
+      "message": "Remove debug statements"
+    }
+  }
+}
+```
+
+</div>
+</details>
+
+<details>
+<summary>Script rules examples</summary>
+<br />
+<div align="left">
+
+Soon!
+
+</div>
+</details>
+
+<details>
+<summary>AI rules examples</summary>
+<br />
+<div align="left">
+
+Soon!
+
+</div>
+</details>
+
+</div>
+<!-- </DYNFIELD:RULES> -->
+
+<!-- <DYNFIELD:INSPIRATIONS> -->
 ## 💡 Inspirations<a href="#TOC"><img align="right" src="https://cdn.jsdelivr.net/gh/lucasvtiradentes/tscanner@main/.github/image/up_arrow.png" width="22"></a>
 
-- [Biome](https://github.com/biomejs/biome) - Biome is a performant toolchain for web projects, it aims to provide developer tools to maintain the health of said projects.
+- [Biome](https://github.com/biomejs/biome) - High-performance Rust-based linter and formatter for web projects
 - [VSCode Bookmarks](https://github.com/alefragnani/vscode-bookmarks) - Bookmarks Extension for Visual Studio Code
+<!-- </DYNFIELD:INSPIRATIONS> -->
+
+<!-- <DYNFIELD:CONTRIBUTING> -->
+## 🤝 Contributing<a href="#TOC"><img align="right" src="https://cdn.jsdelivr.net/gh/lucasvtiradentes/tscanner@main/.github/image/up_arrow.png" width="22"></a>
+
+Contributions are welcome! See [CONTRIBUTING.md](https://github.com/lucasvtiradentes/tscanner/blob/main/CONTRIBUTING.md) for setup instructions and development workflow.
+<!-- </DYNFIELD:CONTRIBUTING> -->
 
 ## 📜 License<a href="#TOC"><img align="right" src="https://cdn.jsdelivr.net/gh/lucasvtiradentes/tscanner@main/.github/image/up_arrow.png" width="22"></a>
 
 MIT License - see [LICENSE](LICENSE) file for details.
 
-<a href="#"><img src="https://cdn.jsdelivr.net/gh/lucasvtiradentes/tscanner@main/.github/image/divider.png" /></a>
+<!-- <DYNFIELD:FOOTER> -->
+<div width="100%" align="center">
+  <img src="https://cdn.jsdelivr.net/gh/lucasvtiradentes/lino@main/.github/image/divider.png" />
+</div>
+
+<br />
 
 This repository is automatically generated. If you want to contribute or see the source code, you can find it in the [TScanner monorepo](https://github.com/lucasvtiradentes/tscanner/tree/main/packages/github-action).
 
-- **Current version:** `v0.0.14`
-- **Generated at:** `2025-11-26T02:08:40Z`
+- **Current version:** `v0.0.19`
+- **Generated at:** `2025-11-29T04:28:01Z`
 
 <a href="#"><img src="https://cdn.jsdelivr.net/gh/lucasvtiradentes/tscanner@main/.github/image/divider.png" /></a>
 
@@ -179,3 +714,4 @@ This repository is automatically generated. If you want to contribute or see the
     <a target="_blank" href="https://github.com/lucasvtiradentes"><img src="https://img.shields.io/badge/-github-gray?logo=Github&logoColor=white" alt="Github"></a>
   </div>
 </div>
+<!-- </DYNFIELD:FOOTER> -->
