@@ -154,7 +154,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: lucasvtiradentes/tscanner-action@v0.0.26
+      - uses: lucasvtiradentes/tscanner-action@v0.0.27
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 ```
@@ -323,7 +323,7 @@ jobs:
           mkdir -p ~/.claude
           echo '${{ secrets.CLAUDE_CREDENTIALS }}' > ~/.claude/.credentials.json
 
-      - uses: lucasvtiradentes/tscanner-action@v0.0.26
+      - uses: lucasvtiradentes/tscanner-action@v0.0.27
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           ai-mode: include
@@ -372,7 +372,7 @@ jobs:
           echo '${{ secrets.GEMINI_CREDENTIALS }}' > ~/.gemini/oauth_creds.json
           echo '{"security":{"auth":{"selectedType":"oauth-personal"}}}' > ~/.gemini/settings.json
 
-      - uses: lucasvtiradentes/tscanner-action@v0.0.26
+      - uses: lucasvtiradentes/tscanner-action@v0.0.27
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           ai-mode: include
@@ -410,7 +410,7 @@ jobs:
           mkdir -p ~/.claude
           echo '${{ secrets.CLAUDE_CREDENTIALS }}' > ~/.claude/.credentials.json
 
-      - uses: lucasvtiradentes/tscanner-action@v0.0.26
+      - uses: lucasvtiradentes/tscanner-action@v0.0.27
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           ai-mode: only
@@ -449,7 +449,7 @@ jobs:
           node-version: '20'
           cache: 'pnpm'
 
-      - uses: lucasvtiradentes/tscanner-action@v0.0.26
+      - uses: lucasvtiradentes/tscanner-action@v0.0.27
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           target-branch: 'origin/main'        # omit to scan full codebase
@@ -469,8 +469,7 @@ jobs:
 To scan your code, you need to set up the rules in the TScanner config folder. Here's how to get started:
 
 1. **CLI**: Run `tscanner init` in your project root (**Recommended**)
-2. **VSCode Extension**: TScanner icon in the status bar → `Manage Rules` → Select desired rules → `Save`
-3. **Manual**: Copy the default config below to `.tscanner/config.jsonc`
+2. **Manual**: Copy the default config below to `.tscanner/config.jsonc`
 
 <div align="center">
 <details>
@@ -482,16 +481,7 @@ To scan your code, you need to set up the rules in the TScanner config folder. H
 
 ```json
 {
-  "$schema": "https://unpkg.com/tscanner@0.0.29/schema.json",
-  "rules": {
-    "builtin": {
-      "no-explicit-any": {}
-    },
-    "regex": {},
-    "script": {}
-  },
-  "aiRules": {},
-  "ai": {},
+  "$schema": "https://unpkg.com/tscanner@0.0.30/schema.json",
   "files": {
     "include": [
       "**/*.ts",
@@ -511,19 +501,8 @@ To scan your code, you need to set up the rules in the TScanner config folder. H
   "codeEditor": {
     "highlightErrors": true,
     "highlightWarnings": false,
-    "scanIntervalSeconds": 0,
-    "aiScanIntervalSeconds": 0
-  },
-  "cli": {
-    "groupBy": "file",
-    "aiMode": "ignore",
-    "noCache": false,
-    "showSettings": true,
-    "showIssueSeverity": true,
-    "showIssueSourceLine": true,
-    "showIssueRuleName": true,
-    "showIssueDescription": false,
-    "showSummary": true
+    "scanInterval": 0,
+    "aiScanInterval": 0
   }
 }
 ```
@@ -610,7 +589,7 @@ Customize TScanner to validate what matters to your project while maintaining co
     <th width="400">Example</th>
   </tr>
   <tr>
-    <td>Built-in</td>
+    <td><b>Built-in</b></td>
     <td>38 ready-to-use AST rules</td>
     <td><code>no-explicit-any</code>, <code>prefer-const</code>, <code>no-console</code></td>
   </tr>
@@ -633,6 +612,9 @@ Customize TScanner to validate what matters to your project while maintaining co
 
 </div>
 
+
+  <br />
+  
 <div align="center">
 
 <details>
@@ -1005,7 +987,7 @@ Run custom scripts that receive file data via stdin and output issues as JSON:
   "rules": {
     "script": {
       "no-debug-comments": {
-        "command": "npx tsx .tscanner/scripts/no-debug-comments.ts",
+        "command": "npx tsx .tscanner/script-rules/no-debug-comments.ts",
         "message": "Debug comments should be removed",
         "severity": "warning"
       }
@@ -1014,7 +996,7 @@ Run custom scripts that receive file data via stdin and output issues as JSON:
 }
 ```
 
-**Script** (`.tscanner/scripts/no-debug-comments.ts`):
+**Script** (`.tscanner/script-rules/no-debug-comments.ts`):
 ```typescript
 #!/usr/bin/env npx tsx
 
@@ -1096,12 +1078,12 @@ Use AI prompts to perform semantic code analysis:
   },
   "ai": {
     "provider": "claude",
-    "timeout": 120000
+    "timeout": 120
   }
 }
 ```
 
-**Prompt** (`.tscanner/prompts/find-complexity.md`):
+**Prompt** (`.tscanner/ai-rules/find-complexity.md`):
 ```markdown
 # Find Complex Functions
 
@@ -1217,8 +1199,8 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 This repository is automatically generated. If you want to contribute or see the source code, you can find it in the [TScanner monorepo](https://github.com/lucasvtiradentes/tscanner/tree/main/packages/github-action).
 
-- **Current version:** `v0.0.26`
-- **Generated at:** `2025-12-08T01:04:17Z`
+- **Current version:** `v0.0.27`
+- **Generated at:** `2025-12-09T06:03:17Z`
 
 <a href="#"><img src="https://cdn.jsdelivr.net/gh/lucasvtiradentes/tscanner@main/.github/image/divider.png" /></a>
 
